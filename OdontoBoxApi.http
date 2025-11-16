@@ -1,0 +1,6 @@
+@OdontoBoxApi_HostAddress = http://localhost:5183
+
+GET {{OdontoBoxApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
