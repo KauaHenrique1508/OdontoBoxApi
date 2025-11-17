@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tomtomzada\\OneDrive\\Desktop\\OdontoBoxApi\\OdontoBoxApi.csproj": {}
+    "C:\\Users\\kayky\\OneDrive\\Desktop\\OdontoBoxApi\\OdontoBoxApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tomtomzada\\OneDrive\\Desktop\\OdontoBoxApi\\OdontoBoxApi.csproj": {
+    "C:\\Users\\kayky\\OneDrive\\Desktop\\OdontoBoxApi\\OdontoBoxApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tomtomzada\\OneDrive\\Desktop\\OdontoBoxApi\\OdontoBoxApi.csproj",
+        "projectUniqueName": "C:\\Users\\kayky\\OneDrive\\Desktop\\OdontoBoxApi\\OdontoBoxApi.csproj",
         "projectName": "OdontoBoxApi",
-        "projectPath": "C:\\Users\\Tomtomzada\\OneDrive\\Desktop\\OdontoBoxApi\\OdontoBoxApi.csproj",
-        "packagesPath": "C:\\Users\\Tomtomzada\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tomtomzada\\OneDrive\\Desktop\\OdontoBoxApi\\obj\\",
+        "projectPath": "C:\\Users\\kayky\\OneDrive\\Desktop\\OdontoBoxApi\\OdontoBoxApi.csproj",
+        "packagesPath": "C:\\Users\\kayky\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kayky\\OneDrive\\Desktop\\OdontoBoxApi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Tomtomzada\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\kayky\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,6 +57,10 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -93,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
