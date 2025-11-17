@@ -11,5 +11,7 @@ namespace OdontoBoxApi.Data
         // Mapeamento das classes para tabelas no banco de dados
         public DbSet<Produto> Produtos { get; set; }
         // ... (Adicionar DbSet para Fornecedor, Entrada, Saida)
+
+        public DbSet<Fornecedor> Fornecedores { get; set;  }
     }
 }
