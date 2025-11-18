@@ -17,5 +17,9 @@ namespace OdontoBoxApi.Models
         public int QuantidadeAtual { get; set; }
 
         public int NivelMinimo { get; set; }
+
+        public int FornecedorId {get; set;}
+
+        public int SaidaId {get; set;}
     }
 }
