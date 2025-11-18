@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace OdontoBoxApi
+namespace OdontoBoxApi.Models
 {
     public class Saida
     {
@@ -11,5 +11,6 @@ namespace OdontoBoxApi
         public int Quantidade { get; set; }
         public string? Motivo { get; set; }
         public string? Observacao { get; set; }
+        public Produto? Produto { get; set; }
     }
 }
