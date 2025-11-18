@@ -59,13 +59,11 @@ namespace OdontoBoxApi.Controllers;
                 return Problem("Entidade Produtos é nula.");
             }
             
-            //add coisa aqui kaua, validação se o fornecedor existe
             var fornecedorExiste = await _context.Fornecedores.FindAsync(produto.FornecedorId);
             if (fornecedorExiste == null)
             {
                 return BadRequest($"Fornecedor com ID: {produto.FornecedorId} não encontrado.");
             }
-            //validar se o nome n ta vazio
             if (string.IsNullOrWhiteSpace(produto.Nome))
             {
                     return BadRequest("O nome do produto é obrigatório.");
@@ -118,7 +116,6 @@ namespace OdontoBoxApi.Controllers;
                 return NotFound();
             }
             
-            //validacao de saida pra poder deletar, se tiver saida pra esse produto, n deixa deletar
             var saidasAssociadas = await _context.Saidas
                 .Where(s => s.ProdutoId == id)
                 .CountAsync();

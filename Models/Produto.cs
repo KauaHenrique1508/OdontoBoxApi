@@ -24,7 +24,6 @@ namespace OdontoBoxApi.Models
         // public int SaidaId { get; set; }
         // public int EntradaId { get; set; }
 
-        // public ICollection<Fornecedor> Fornecedor { get; set; } = new List<Fornecedor>();
         // public ICollection<Entrada> Entradas { get; set; } = new List<Entrada>();
         public ICollection<Saida> Saidas { get; set; } = new List<Saida>();
     }

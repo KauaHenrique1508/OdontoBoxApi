@@ -57,6 +57,11 @@ namespace OdontoBoxApi.Controllers
                 return BadRequest("Quantidade insuficiente em estoque");
             }
 
+            if(saida.ProdutoId <= 0)
+            {
+                return BadRequest("Produto ID inexistente");
+            }
+
             produto.QuantidadeAtual -= saida.Quantidade;
 
             _context.Saidas.Add(saida);
@@ -64,47 +69,6 @@ namespace OdontoBoxApi.Controllers
             
             return CreatedAtAction("GetSaidaId", new { id = saida.Id }, saida); 
         }
-
-        // [HttpPut("{id}")]
-        // public async Task<ActionResult<Saida>> Put(int id, Saida s)
-        // {
-        //     var saida = await _context.Saidas.FirstOrDefaultAsync(s => s.Id == id);
-
-        //     if(saida == null)
-        //     {
-        //         return NotFound("Saída não encontrada");
-        //     }
-
-        //     var produto = await _context.Produtos.FirstOrDefaultAsync(p => p.Id == s.ProdutoId);
-
-        //     if(produto == null)
-        //     {
-        //         return NotFound("Produto não encontrado");
-        //     }
-
-        //     var objSaida = s;
-
-        //     _context.Entry(saida).State = EntityState.Modified;
-
-        //     try
-        //     {
-        //         await _context.SaveChangesAsync();
-        //     }
-        //     catch (DbUpdateConcurrencyException)
-        //     {
-        //         if(!ProdutosExists(id))
-        //         {
-        //           return NotFound( "ID: " + id + " não encontrado."); // Retorna 404 se o produto não existir
-        //         }   
-        //         else
-        //         {
-        //             throw; // Re-throw se for outro erro
-        //         }
-        //     }
-        //     return NoContent(); // erro 204
-
-
-        // }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
@@ -129,6 +93,5 @@ namespace OdontoBoxApi.Controllers
             await _context.SaveChangesAsync();
             return NoContent();
         }
-
     }
 }

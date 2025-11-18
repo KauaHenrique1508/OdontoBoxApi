@@ -27,6 +27,7 @@ public class FornecedoresController : ControllerBase
 
         var fornecedores = await _context.Fornecedores
          .Include(f => f.Produtos)
+        //  .ThenInclude(p => p.Saidas)
          .ToListAsync();
 
         return Ok(fornecedores);

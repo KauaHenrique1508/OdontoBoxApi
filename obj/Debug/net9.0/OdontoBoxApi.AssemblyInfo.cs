@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OdontoBoxApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0149115458d820a1e53a72d260984406d7e6c215")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5881dbe7dd46079913d4d7eab231956a5593e816")]
 [assembly: System.Reflection.AssemblyProductAttribute("OdontoBoxApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OdontoBoxApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
