@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace OdontoBoxApi.Models
 {
@@ -11,6 +12,7 @@ namespace OdontoBoxApi.Models
         public string? Motivo { get; set; }
         public string? Observacao { get; set; }
         public int ProdutoId { get; set; }
+        [JsonIgnore]
         public Produto? Produto { get; set; }
 
         // public ICollection<Produto> Produto { get; set; } = new List<Produto>();

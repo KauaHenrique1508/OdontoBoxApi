@@ -48,7 +48,7 @@ public class OdontoBoxContext : DbContext
         //Produto - Saída
         modelBuilder.Entity<Saida>()
             .HasOne(s => s.Produto)                       
-            .WithMany()                      
+            .WithMany(p => p.Saidas)                      
             .HasForeignKey(s => s.ProdutoId)              
             .OnDelete(DeleteBehavior.Restrict);          
 

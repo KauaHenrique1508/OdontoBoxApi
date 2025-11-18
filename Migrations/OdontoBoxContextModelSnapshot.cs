@@ -31,9 +31,6 @@ namespace OdontoBoxApi.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("ProdutoId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Telefone")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -55,9 +52,6 @@ namespace OdontoBoxApi.Migrations
                     b.Property<int>("FornecedorId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("FornecedorId1")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("NivelMinimo")
                         .HasColumnType("INTEGER");
 
@@ -76,8 +70,6 @@ namespace OdontoBoxApi.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("FornecedorId");
-
-                    b.HasIndex("FornecedorId1");
 
                     b.ToTable("Produtos");
                 });
@@ -100,9 +92,6 @@ namespace OdontoBoxApi.Migrations
                     b.Property<int>("ProdutoId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("ProdutoId1")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("Quantidade")
                         .HasColumnType("INTEGER");
 
@@ -110,22 +99,16 @@ namespace OdontoBoxApi.Migrations
 
                     b.HasIndex("ProdutoId");
 
-                    b.HasIndex("ProdutoId1");
-
                     b.ToTable("Saidas");
                 });
 
             modelBuilder.Entity("OdontoBoxApi.Models.Produto", b =>
                 {
                     b.HasOne("OdontoBoxApi.Models.Fornecedor", "Fornecedor")
-                        .WithMany()
+                        .WithMany("Produtos")
                         .HasForeignKey("FornecedorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("OdontoBoxApi.Models.Fornecedor", null)
-                        .WithMany("Produtos")
-                        .HasForeignKey("FornecedorId1");
 
                     b.Navigation("Fornecedor");
                 });
@@ -133,14 +116,10 @@ namespace OdontoBoxApi.Migrations
             modelBuilder.Entity("OdontoBoxApi.Models.Saida", b =>
                 {
                     b.HasOne("OdontoBoxApi.Models.Produto", "Produto")
-                        .WithMany()
+                        .WithMany("Saidas")
                         .HasForeignKey("ProdutoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("OdontoBoxApi.Models.Produto", null)
-                        .WithMany("Saidas")
-                        .HasForeignKey("ProdutoId1");
 
                     b.Navigation("Produto");
                 });
