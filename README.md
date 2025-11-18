@@ -1,5 +1,5 @@
 OdontoBox API: Sistema de Gerenciamento de Estoque Odontológico
-A OdontoBox API é a solução de backend desenvolvida em C# .NET 8 (ou a versão que você está usando) para o gerenciamento eficiente de materiais e insumos em clínicas odontológicas.
+A OdontoBox API é a solução de backend desenvolvida em C# .NET 9 (ou a versão que você está usando) para o gerenciamento eficiente de materiais e insumos em clínicas odontológicas.
 O sistema implementa um conjunto de serviços CRUD (Create, Read, Update, Delete) focados na movimentação de estoque, garantindo a rastreabilidade e o controle de recursos críticos.
 Funcionalidades Principais
 Catálogo de Produtos: Gerenciamento completo dos itens de estoque (materiais, insumos, etc.).
