@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kayky\\OneDrive\\Desktop\\odontobox\\OdontoBoxApi\\OdontoBoxApi.csproj": {}
+    "C:\\Users\\KaykyRibeiro\\Downloads\\OdontoBoxApi\\OdontoBoxApi\\OdontoBoxApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kayky\\OneDrive\\Desktop\\odontobox\\OdontoBoxApi\\OdontoBoxApi.csproj": {
+    "C:\\Users\\KaykyRibeiro\\Downloads\\OdontoBoxApi\\OdontoBoxApi\\OdontoBoxApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kayky\\OneDrive\\Desktop\\odontobox\\OdontoBoxApi\\OdontoBoxApi.csproj",
+        "projectUniqueName": "C:\\Users\\KaykyRibeiro\\Downloads\\OdontoBoxApi\\OdontoBoxApi\\OdontoBoxApi.csproj",
         "projectName": "OdontoBoxApi",
-        "projectPath": "C:\\Users\\kayky\\OneDrive\\Desktop\\odontobox\\OdontoBoxApi\\OdontoBoxApi.csproj",
-        "packagesPath": "C:\\Users\\kayky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kayky\\OneDrive\\Desktop\\odontobox\\OdontoBoxApi\\obj\\",
+        "projectPath": "C:\\Users\\KaykyRibeiro\\Downloads\\OdontoBoxApi\\OdontoBoxApi\\OdontoBoxApi.csproj",
+        "packagesPath": "C:\\Users\\KaykyRibeiro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KaykyRibeiro\\Downloads\\OdontoBoxApi\\OdontoBoxApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\kayky\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\KaykyRibeiro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -91,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.205/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
