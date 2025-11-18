@@ -20,7 +20,6 @@ namespace OdontoBoxApi.Controllers;
             _context = context;
         }
 
-        // GET: api/produtos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Produto>>> GetProdutos()
         {
@@ -28,27 +27,24 @@ namespace OdontoBoxApi.Controllers;
             
                 return Problem("Entidade Produtos é nula.");
 
-            // Retorna todos os produtos
             return Ok(await _context.Produtos.ToListAsync());
         }
 
-        // GET api/produtos/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Produto>> GetProdutoId(int id)
         {
             if (_context.Produtos == null)
             {
-                return Problem(); // Retorna 404 se não encontrar
+                return Problem(); 
             }
             var produto = await _context.Produtos.FindAsync(id);
             if (produto == null)
             {
-                return NotFound("ID: " + id + " não encontrado."); // Retorna 404 se não encontrar
+                return NotFound("ID: " + id + " não encontrado."); 
             }
             return Ok(produto);
         }
 
-        // POST api/produtos
         [HttpPost]
         public async Task<ActionResult<Produto>> PostProduto(Produto produto)
         {   
@@ -59,16 +55,15 @@ namespace OdontoBoxApi.Controllers;
             _context.Produtos.Add(produto);
             await _context.SaveChangesAsync();
             
-            return CreatedAtAction("GetProdutoId", new { id = produto.Id }, produto); //
+            return CreatedAtAction("GetProdutoId", new { id = produto.Id }, produto); 
         }
 
-        // PUT api/produtos/5
         [HttpPut("{id}")]
         public async Task<ActionResult<Produto>> Put(int id, Produto produto)
         {
             if (id != produto.Id)
             {
-                return BadRequest("ID da URL diferente do ID do objeto Produto"); // Retorna 400 se o ID da rota não bater com o ID do corpo
+                return BadRequest("ID da URL diferente do ID do objeto Produto"); 
             }
             _context.Entry(produto).State = EntityState.Modified;
             try
@@ -79,16 +74,16 @@ namespace OdontoBoxApi.Controllers;
             {
                 if(!ProdutosExists(id))
                 {
-                  return NotFound( "ID: " + id + " não encontrado."); // Retorna 404 se o produto não existir
+                  return NotFound( "ID: " + id + " não encontrado."); 
                 }   
                 else
                 {
-                    throw; // Re-throw se for outro erro
+                    throw; 
                 }
             }
-            return NoContent(); // erro 204
+            return NoContent(); 
         }
-        // DELETE api/produtos/5
+    
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteProduto(int id)
         {
@@ -109,7 +104,7 @@ namespace OdontoBoxApi.Controllers;
         }
          private bool ProdutosExists(int id)
     {
-        return (_context.Produtos?.Any(e => e.Id == id)).GetValueOrDefault(); //? verifica se é verdadeiro ou falso
+        return (_context.Produtos?.Any(e => e.Id == id)).GetValueOrDefault();
     }
     }
 
