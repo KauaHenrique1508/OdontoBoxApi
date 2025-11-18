@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kayky\\OneDrive\\Desktop\\OdontoBoxApi\\OdontoBoxApi.csproj": {}
+    "C:\\Users\\littl\\OneDrive\\Área de Trabalho\\OdontoBoxApi\\OdontoBoxApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kayky\\OneDrive\\Desktop\\OdontoBoxApi\\OdontoBoxApi.csproj": {
+    "C:\\Users\\littl\\OneDrive\\Área de Trabalho\\OdontoBoxApi\\OdontoBoxApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kayky\\OneDrive\\Desktop\\OdontoBoxApi\\OdontoBoxApi.csproj",
+        "projectUniqueName": "C:\\Users\\littl\\OneDrive\\Área de Trabalho\\OdontoBoxApi\\OdontoBoxApi.csproj",
         "projectName": "OdontoBoxApi",
-        "projectPath": "C:\\Users\\kayky\\OneDrive\\Desktop\\OdontoBoxApi\\OdontoBoxApi.csproj",
-        "packagesPath": "C:\\Users\\kayky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kayky\\OneDrive\\Desktop\\OdontoBoxApi\\obj\\",
+        "projectPath": "C:\\Users\\littl\\OneDrive\\Área de Trabalho\\OdontoBoxApi\\OdontoBoxApi.csproj",
+        "packagesPath": "C:\\Users\\littl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\littl\\OneDrive\\Área de Trabalho\\OdontoBoxApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kayky\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\littl\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -91,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

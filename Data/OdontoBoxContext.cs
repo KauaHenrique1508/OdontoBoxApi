@@ -11,5 +11,7 @@ namespace OdontoBoxApi.Data
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Saida> Saidas { get; set; }
         // ... (Adicionar DbSet para Fornecedor, Entrada, Saida)
+
+        public DbSet<Fornecedor> Fornecedores { get; set;  }
     }
 }
