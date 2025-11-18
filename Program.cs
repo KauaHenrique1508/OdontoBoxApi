@@ -3,23 +3,21 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Registrar Controllers (obrigatório)
 builder.Services.AddControllers();
 
-// Registrar EF Core + MySQL
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection"); 
+
 builder.Services.AddDbContext<OdontoBoxContext>(options =>
-    options.UseMySql(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
-        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
-    )
-);
+    {
+        options.UseSqlite(connectionString);
+    });
+
+
 
 var app = builder.Build();
 
-// HTTPS
 app.UseHttpsRedirection();
 
-// Mapeia os Controllers
 app.MapControllers();
 
 app.Run();

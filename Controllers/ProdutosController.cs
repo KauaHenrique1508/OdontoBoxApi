@@ -58,7 +58,7 @@ namespace OdontoBoxApi.Controllers;
             }
             _context.Produtos.Add(produto);
             await _context.SaveChangesAsync();
-            // Retorna 201 Created com o novo objeto
+            
             return CreatedAtAction("GetProdutoId", new { id = produto.Id }, produto); //
         }
 
