@@ -24,10 +24,16 @@ namespace OdontoBoxApi.Controllers;
         public async Task<ActionResult<IEnumerable<Produto>>> GetProdutos()
         {
             if (_context.Produtos == null)
-            
+        {
                 return Problem("Entidade Produtos é nula.");
+        }
+            
 
-            return Ok(await _context.Produtos.ToListAsync());
+            var produtos = await _context.Produtos
+                .Include(s => s.Saidas)
+                .ToListAsync();
+
+            return Ok(produtos);
         }
 
         [HttpGet("{id}")]

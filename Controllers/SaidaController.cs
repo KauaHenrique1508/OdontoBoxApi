@@ -19,8 +19,9 @@ namespace OdontoBoxApi.Controllers
         public async Task<ActionResult<IEnumerable<Saida>>> GetSaidas()
         {
             if (_context.Saidas == null)
-            
+            {
                 return Problem("Entidade Saida é nula.");
+            }
 
             return Ok(await _context.Saidas.ToListAsync());
         }
@@ -44,73 +45,90 @@ namespace OdontoBoxApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Saida>> PostSaida(Saida saida)
         {   
-            if(_context.Saidas == null)
+            var produto = await _context.Produtos.FirstOrDefaultAsync(p => p.Id == saida.ProdutoId);
+
+            if(produto == null)
             {
-                return Problem("Entidade Saida é nula.");
+                return NotFound("Produto não encontrado");
             }
-            
+
+            if(produto.QuantidadeAtual < saida.Quantidade)
+            {
+                return BadRequest("Quantidade insuficiente em estoque");
+            }
+
+            produto.QuantidadeAtual -= saida.Quantidade;
+
             _context.Saidas.Add(saida);
-            
-            
             await _context.SaveChangesAsync();
-            return CreatedAtAction("GetSaidaId", new { id = saida.Id }, saida); //
+            
+            return CreatedAtAction("GetSaidaId", new { id = saida.Id }, saida); 
         }
 
-    //     // PUT api/produtos/5
-    //     [HttpPut("{id}")]
-    //     public async Task<ActionResult<Produto>> Put(int id, Produto produto)
-    //     {
-    //         if (id != produto.Id)
-    //         {
-    //             return BadRequest("ID da URL diferente do ID do objeto Produto"); // Retorna 400 se o ID da rota não bater com o ID do corpo
-    //         }
-    //         _context.Entry(produto).State = EntityState.Modified;
-    //         try
-    //         {
-    //             await _context.SaveChangesAsync();
-    //         }
-    //         catch (DbUpdateConcurrencyException)
-    //         {
-    //             if(!ProdutosExists(id))
-    //             {
-    //               return NotFound( "ID: " + id + " não encontrado."); // Retorna 404 se o produto não existir
-    //             }   
-    //             else
-    //             {
-    //                 throw; // Re-throw se for outro erro
-    //             }
-    //         }
-    //         return NoContent(); // erro 204
-    //     }
-    //     // DELETE api/produtos/5
-    //     [HttpDelete("{id}")]
-    //     public async Task<ActionResult> DeleteProduto(int id)
-    //     {
-    //        if (_context.Produtos == null)
-    //     {
-    //         return Problem();
-    //     }
-    //     var produto = await _context.Produtos.FindAsync(id);
-    //     if (produto == null) 
-    //     {
-    //         return NotFound();
-    //     }
+        // [HttpPut("{id}")]
+        // public async Task<ActionResult<Saida>> Put(int id, Saida s)
+        // {
+        //     var saida = await _context.Saidas.FirstOrDefaultAsync(s => s.Id == id);
 
-    //     _context.Produtos.Remove(produto);
-    //     await _context.SaveChangesAsync();
+        //     if(saida == null)
+        //     {
+        //         return NotFound("Saída não encontrada");
+        //     }
 
-    //     return NoContent();
-    //     }
-    //      private bool ProdutosExists(int id)
-    // {
-    //     return (_context.Produtos?.Any(e => e.Id == id)).GetValueOrDefault(); //? verifica se é verdadeiro ou falso
-    // }
-    // }
+        //     var produto = await _context.Produtos.FirstOrDefaultAsync(p => p.Id == s.ProdutoId);
+
+        //     if(produto == null)
+        //     {
+        //         return NotFound("Produto não encontrado");
+        //     }
+
+        //     var objSaida = s;
+
+        //     _context.Entry(saida).State = EntityState.Modified;
+
+        //     try
+        //     {
+        //         await _context.SaveChangesAsync();
+        //     }
+        //     catch (DbUpdateConcurrencyException)
+        //     {
+        //         if(!ProdutosExists(id))
+        //         {
+        //           return NotFound( "ID: " + id + " não encontrado."); // Retorna 404 se o produto não existir
+        //         }   
+        //         else
+        //         {
+        //             throw; // Re-throw se for outro erro
+        //         }
+        //     }
+        //     return NoContent(); // erro 204
 
 
+        // }
 
-        //create saída
-        //read saída
-        //delete saída
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var saida = await _context.Saidas.FirstOrDefaultAsync(s => s.Id == id);
+
+            if(saida == null)
+            {
+                return NotFound("Saída não encontrada");
+            }
+
+            var produto = await _context.Produtos.FirstOrDefaultAsync(p => p.Id == saida.ProdutoId);
+
+            if(produto == null)
+            {
+                return NotFound("Produto não encontrado");
+            }
+
+            produto.QuantidadeAtual += saida.Quantidade;
+
+            _context.Saidas.Remove(saida);
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
+
     }
 }

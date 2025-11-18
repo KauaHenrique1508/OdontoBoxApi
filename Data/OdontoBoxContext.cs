@@ -24,10 +24,10 @@ public class OdontoBoxContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        //Fornecedor - Produto
+        //Fornecedor n - n Produto
         modelBuilder.Entity<Produto>()
             .HasOne(p => p.Fornecedor)                    
-            .WithMany()                    
+            .WithMany(f => f.Produtos)                    
             .HasForeignKey(p => p.FornecedorId)           
             .OnDelete(DeleteBehavior.Restrict);           
 
@@ -67,7 +67,7 @@ public class OdontoBoxContext : DbContext
         modelBuilder.Entity<Saida>().HasIndex(s => s.ProdutoId);
 
 
-        //CNPJ único
+        // CNPJ único
         modelBuilder.Entity<Fornecedor>()
             .HasIndex(f => f.CNPJ)
             .IsUnique();

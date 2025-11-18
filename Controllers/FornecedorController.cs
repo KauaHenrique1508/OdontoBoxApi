@@ -25,7 +25,11 @@ public class FornecedoresController : ControllerBase
             return Problem("Entidade Fornecedores é nula.");
         }
 
-        return Ok(await _context.Fornecedores.ToListAsync());
+        var fornecedores = await _context.Fornecedores
+         .Include(f => f.Produtos)
+         .ToListAsync();
+
+        return Ok(fornecedores);
     }
 
 //----------------------------------------------------------------------------------
