@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OdontoBoxApi.Data;
-
+using OdontoBoxApi.Models;
 namespace OdontoBoxApi.Controllers
 {
     [ApiController]

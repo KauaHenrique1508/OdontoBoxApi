@@ -25,10 +25,7 @@ public class FornecedoresController : ControllerBase
             return Problem("Entidade Fornecedores é nula.");
         }
 
-        return Ok(await _context.Fornecedores
-            .Include(f => f.Produtos)
-            .Include(f => f.Entradas)
-            .ToListAsync());
+        return Ok(await _context.Fornecedores.ToListAsync());
     }
 
 //----------------------------------------------------------------------------------
@@ -40,10 +37,7 @@ public class FornecedoresController : ControllerBase
             return Problem("Entidade Fornecedores é nula.");
         }
 
-        var fornecedor = await _context.Fornecedores
-            .Include(f => f.Produtos)
-            .Include(f => f.Entradas)
-            .FirstOrDefaultAsync(f => f.Id == id);
+        var fornecedor = await _context.Fornecedores.FindAsync(id);
 
         if (fornecedor == null)
         {

@@ -5,7 +5,6 @@ namespace OdontoBoxApi.Models
 {
     public class Produto
     {
-        [Key]
         public int Id { get; set; }
 
         public string? Nome { get; set; }
@@ -19,7 +18,10 @@ namespace OdontoBoxApi.Models
         public int NivelMinimo { get; set; }
 
         public int FornecedorId {get; set;}
+        public Fornecedor? Fornecedor { get; set; }
 
-        public int SaidaId {get; set;}
+        //public ICollection<Entrada> Entradas { get; set; } = new List<Entrada>();
+
+        //public ICollection<Saida> Saidas { get; set; } = new List<Saida>();
     }
 }
